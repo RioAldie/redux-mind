@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = [
   {
@@ -16,8 +16,24 @@ const initialState = [
 export const commentSlice = createSlice({
   name: 'comments',
   initialState,
-  reducers: {},
+  reducers: {
+    postComment: {
+      reducer(state, action) {
+        state.push(action.payload);
+      },
+      prepare(user, body) {
+        return {
+          payload: {
+            id: nanoid(),
+            user,
+            body,
+          },
+        };
+      },
+    },
+  },
 });
-const allComment = (state) => state.comments;
-console.log(allComment);
+export const allComment = (state) => state.comment;
+
+export const { postComment } = commentSlice.actions;
 export default commentSlice.reducer;
