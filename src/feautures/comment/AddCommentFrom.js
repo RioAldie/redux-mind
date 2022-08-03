@@ -17,7 +17,14 @@ const AddCommentFrom = () => {
     }
   };
   return (
-    <form>
+    <form
+      style={{
+        width: '400px',
+        height: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       <label>Username: </label>
       <input onChange={(e) => onUserChanged(e)} value={user} />
       <label>Comment: </label>

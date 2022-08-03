@@ -4,10 +4,18 @@ import Counter from './feautures/counter/Counter';
 
 const App = () => {
   return (
-    <div className="App">
+    <main
+      style={{
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+      className="App"
+    >
       <AddCommentFrom />
       <Comment />
-    </div>
+    </main>
   );
 };
 

@@ -12,14 +12,7 @@ const Comment = () => {
     padding: '10px',
   };
   return (
-    <section
-      style={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
+    <section>
       {comments.map((comment) => {
         return (
           <div key={comment.id} style={boxComment}>
